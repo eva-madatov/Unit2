@@ -12,9 +12,19 @@
 //   "positive even"   if num is positive and even
 //   "positive odd"    if num is positive and odd
 //   "negative even"   if num is negative and even
-//   "negative odd"    if num is negative and odd
-function classifyNumber(num) {
+//   "negative odd"    if num is negative and od
   // TODO: your code here
+function classifyNumber(x) {
+if (x===0){
+console.log("0");
+} else {if (x>0 && x % 2===0){
+  console.log("positive even");
+} else {if (x>0 && x % 2!==0){
+ console.log("positive odd");
+}
+  console.log("negatuve even);
+}
+
 }
 
 console.log(classifyNumber(0)); // "zero"
