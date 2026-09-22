@@ -12,19 +12,20 @@
 //   "positive even"   if num is positive and even
 //   "positive odd"    if num is positive and odd
 //   "negative even"   if num is negative and even
-//   "negative odd"    if num is negative and od
-  // TODO: your code here
+//   "negative odd"    if num is negative and odd
+// TODO: your code here
 function classifyNumber(x) {
-if (x===0){
-console.log("0");
-} else {if (x>0 && x % 2===0){
-  console.log("positive even");
-} else {if (x>0 && x % 2!==0){
- console.log("positive odd");
-}
-  console.log("negatuve even);
-}
-
+  if (x === 0) {
+    return "0";
+  } else if (x > 0 && x % 2 === 0) {
+    return "positive even";
+  } else if (x > 0 && x % 2 !== 0) {
+    return "positive odd";
+  } else if (x < 0 && x % 2 === 0) {
+    return "negative even";
+  } else if (x < 0 && x % 2 !== 0) {
+    return "negative odd";
+  }
 }
 
 console.log(classifyNumber(0)); // "zero"
@@ -41,8 +42,21 @@ console.log(classifyNumber(-7)); // "negative odd"
 //   60-69   -> "D"
 //   below 60 -> "F"
 // If score is less than 0 or greater than 100, return "Invalid score".
+// TODO: your code here
 function getLetterGrade(score) {
-  // TODO: your code here
+  if (score < 0 || score > 100) {
+    return "Invalid Score";
+  } else if (score >= 90 && score <= 100) {
+    return "A";
+  } else if (score >= 80 && score <= 89) {
+    return "B";
+  } else if (score >= 70 && score <= 79) {
+    return "C";
+  } else if (score >= 60 && score <= 69) {
+    return "D";
+  } else if (score < 60) {
+    return "F";
+  }
 }
 
 console.log(getLetterGrade(95)); // "A"
@@ -57,8 +71,20 @@ console.log(getLetterGrade(150)); // "Invalid score"
 //   "Buzz"     if num is divisible by 5
 //   "FizzBuzz" if num is divisible by both 3 and 5
 //   otherwise, num converted to a string
-function fizzBuzz(num) {
-  // TODO: your code here
+// TODO: your code here
+function fizzBuzz(x) {
+  if (x % 3 && x % 5 === 0) {
+    return "FizzBuzz";
+  }
+  if (x % 3 === 0) {
+    return "Fizz";
+  }
+  if (x % 5 === 0) {
+    return "Buzz";
+  }
+  if (x % 3 && x % 5 !== 0) {
+    return "num";
+  }
 }
 
 console.log(fizzBuzz(3)); // "Fizz"
