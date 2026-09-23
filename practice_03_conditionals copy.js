@@ -73,17 +73,14 @@ console.log(getLetterGrade(150)); // "Invalid score"
 //   otherwise, num converted to a string
 // TODO: your code here
 function fizzBuzz(x) {
-  if (x % 3 && x % 5 === 0) {
+  if (x % 3 === 0 && x % 5 === 0) {
     return "FizzBuzz";
-  }
-  if (x % 3 === 0) {
+  } else if (x % 3 === 0) {
     return "Fizz";
-  }
-  if (x % 5 === 0) {
+  } else if (x % 5 === 0) {
     return "Buzz";
-  }
-  if (x % 3 && x % 5 !== 0) {
-    return "num";
+  } else {
+    return String(x);
   }
 }
 
@@ -100,8 +97,26 @@ console.log(fizzBuzz(7)); // "7"
 //   weight <= 1  -> 5
 //   weight <= 5  -> 8
 //   weight > 5   -> 12
+
+// TODO: your code here (nested conditional — check isMember first, then weight)
+
 function getShippingCost(weight, isMember) {
-  // TODO: your code here (nested conditional — check isMember first, then weight)
+  if (isMember === true) {
+    if (weight <= 5) {
+      return "0";
+    } else if (weight > 5) {
+      return "3";
+    }
+  }
+  if (isMember === false) {
+    if (weight <= 1) {
+      return "5";
+    } else if (weight <= 5) {
+      return "8";
+    } else if (weight > 5) {
+      return "12";
+    }
+  }
 }
 
 console.log(getShippingCost(3, true)); // 0
@@ -113,9 +128,8 @@ console.log(getShippingCost(10, false)); // 12
 // ---------- Stretch (optional) ----------
 // Rewrite the even/odd check from Problem 1 using the ternary operator
 // instead of if / else.
-function isEvenTernary(num) {
-  // TODO: your code here
-}
+// function isEvenTernary(num) {
+// TODO: your code here
 
-console.log(isEvenTernary(4)); // true
-console.log(isEvenTernary(7)); // false
+// console.log(isEvenTernary(4)); // true
+// console.log(isEvenTernary(7)); // false
